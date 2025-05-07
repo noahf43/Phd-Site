@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New User</title>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body class="w3-container">
+  <h2 class="w3-center">Add New User</h2>
+
+  <form class="w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin" method="POST" action="/Faculty/AddUser">
+    <p>
+      <label>Email</label>
+      <input class="w3-input w3-border" name="email" type="email" required>
+    </p>
+    <p>
+      <label>Temporary Password</label>
+      <input class="w3-input w3-border" name="tempPassword" type="text" required>
+    </p>
+    <p>
+      <button class="w3-button w3-blue" type="submit">Add User</button>
+    </p>
+  </form>
+</body>
+</html>

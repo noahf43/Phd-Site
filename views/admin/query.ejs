@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Query</title>
+<meta charset="UTF-8">
+<meta name="description" content="This is a page containing info">
+<meta http-equiv="refresh" content="3600"> <!-- Refresh every hour -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.w3-query {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.w3-query h2 {
+  text-align: center;
+  color: #333;
+  font-weight: normal;
+}
+.w3-query label {
+  display: block;
+  margin: 10px 0;
+  color: #2196f3;
+  font-weight: bold;
+}
+.w3-query input, .w3-query select {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+.w3-query button {
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.w3-query button:hover {
+  background-color: #177ccb;
+}
+.w3-query ul {
+  list-style: none;
+  padding: 0;
+}
+.w3-query li {
+  margin: 10px 0;
+  color: #333;
+  font-weight: normal;
+}
+.w3-return {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.w3-return h4 {
+  text-align: center;
+  color: #333;
+  font-weight: normal;
+}
+.w3-return ul {
+  list-style: none;
+  padding: 0;
+}
+.w3-return li {
+  margin: 10px 0;
+}
+.w3-return a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  background-color: #2196f3;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+}
+.w3-return a:hover {
+  background-color: #177ccb;
+}
+.query-button {
+  background-color: #177ccb !important;
+}
+
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+    <a href="/Insert" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white">Insert</a>
+    <a href="/Query" class="w3-bar-item w3-button w3-hide-small w3-padding-large w3-hover-white query-button">Query</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="/Insert" class="w3-bar-item w3-button w3-padding-large">Insert</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Query</h1>
+  <p class="w3-xlarge">This is where you can query the data</p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-query">
+      <h2>Query Form</h2>
+      <form action="/Query" method="post" enctype="application/x-www-form-urlencoded">
+        <label for="select">Select</label>
+        <select id="select" name="select" required>
+            <option value="StudentID">StudentID</option>
+            <option value="StudentEmail">StudentEmail</option>
+            <option value="Advisor">Advisor</option>
+            <option value="HasAdvisor">Has Advisor</option>
+            <option value="RA_TA">TA/RA</option>
+            <option value="PassedQualifyingExam">Passed Qualifying Exam</option>
+            <option value="PassedProposal">Passed Proposal</option>
+            <option value="PassedDefense">Passed Defense</option>
+            <option value="DissertaionComm">Dissertation Committee</option>
+            <option value="SubmittedDIG">Submitted DIG</option>
+            <option value="ExpectedGradYear">Expected Graduation Year</option>
+            <option value="Graduated">Graduated</option>
+        </select>
+        <label for="where">Where</label>
+        <input id="where" name="where" type="text" required/>
+        <button>Query</button>
+      </form>
+      <ul>
+        <li> <strong>All</strong> searches <strong>except</strong> the StudentID, Student Email, Advisor and Expected Graduation Year queries will use "true" of "false".
+        <li> At this time you can search based on one field.  
+      </ul>
+    </div>
+
+    <div class="w3-return">
+      <h4>Return Links</h4>
+      <ul>
+        <!-- <li> <a href="http://localhost/Insert">Insert Information</a> -->
+        <li> <a href="/Insert">Insert Information</a>
+        <li> <a href="/">Home Page</a> 
+      </ul>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

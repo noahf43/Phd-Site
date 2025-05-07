@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.423.0",
+    "aws-jwt-verify": "^4.0.0",
+    "aws-sdk": "^2.1692.0",
+    "axios": "^1.5.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.4.1",
+    "ejs": "^3.1.9",
+    "express": "^4.21.2",
+    "jsonwebtoken": "^9.0.2",
+    "jwk-to-pem": "^2.0.5",
+    "mongodb": "^6.1.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "site",
+  "description": "1. Install Node\r    * [NVM for windows](https://github.com/coreybutler/nvm-windows#installation--upgrades)\r    * [NVM](https://github.com/nvm-sh/nvm)\r 2. Some Editor like [VSCode](https://code.visualstudio.com/) or [Visual Studio](https://visualstudio.microsoft.com/)\r 3. Many packages \r    ```\r    Evolving List\r    ```\r 4.",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Progress Site</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="This is a page containing the submission form for progress reports">
+<meta http-equiv="refresh" content="3600"> <!-- Refresh every hour -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-metro-dark-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Fu's PhD Website</h1>
+  <a href="#login"><button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Login</button></a>
+
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>Information</h1>
+      <p>This page is <strong>only</strong> used for <strong>PhD Students, Professors, and the Graduate Coordinators</strong> to access, or modify a students progress.</p>
+      <p>Students can access the <a href="/Submission">Submission Page</a> to submit their requested progress reports. They can also access the <a href="http://localhost/Status">Student-Request-Progress Page</a> to have an email sent to them with their current progress. This will be sent to the student email on record.</p>
+      <p>Faculty can access the Faculty Pages after logging in to have the information regarding a current student they advise sent to their email.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <i class="fa fa-anchor w3-padding-64 w3-text-blue"></i>
+    </div>
+  </div>
+</div>
+
+<!-- Login Links -->
+<div id="login" class="w3-container w3-light-grey w3-padding-64 w3-center">
+  <h2>Login Links</h2>
+  <p><a href="https://us-east-216d6z1cgf.auth.us-east-2.amazoncognito.com/login?client_id=1287qolpmbpv3397lv2ib3vpp3&response_type=code&scope=email+openid&redirect_uri=http://localhost:3000/Login/Faculty" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Faculty Login</a></p>
+  <p><a href="https://us-east-2cfxwpbghr.auth.us-east-2.amazoncognito.com/login?client_id=6boq4oitv1q7tnk4aon9m4hp07&response_type=code&scope=email+openid&redirect_uri=http://localhost:3000/Login/Student" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Student Login</a></p>
+  <p><a href="https://us-east-216d6z1cgf.auth.us-east-2.amazoncognito.com/login?client_id=1287qolpmbpv3397lv2ib3vpp3&response_type=code&scope=email+openid&redirect_uri=http://localhost:3000/Login/Faculty" class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Administrator Login</a></p>
+</div>
+
+<script>
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+</script>
+
+</body>
+</html>

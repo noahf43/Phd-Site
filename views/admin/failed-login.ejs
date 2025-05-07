@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Failed-Login</title>
+<meta charset="UTF-8">
+<meta name="description" content="This is a login page">
+<meta http-equiv="refresh" content="120"> <!-- Refresh every two min -->
+<title>Failed-Login</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.w3-failed {
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.w3-failed h2 {
+  text-align: center;
+  color: #333;
+  font-weight: normal;
+}
+.w3-failed p {
+  text-align: center;
+  color: #f44336;
+  font-weight: bold;
+}
+.w3-failed a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  background-color: #2196f3;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+}
+.w3-failed a:hover {
+  background-color: #177ccb;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Failed Login</h1>
+  <p class="w3-xlarge">You do not have a valid login token!</p>
+  <div class="w3-failed">
+    <h2>Login Failed</h2>
+    <p>Please try again</p>
+    <a href="https://phdumltrack.auth.us-east-1.amazoncognito.com/login?client_id=1k40n2kn3v7ciki79i0t5v83c3&response_type=code&scope=email+openid&redirect_uri=http%3A%2F%2Flocalhost%2FLogin%2FFaculty">Login</a>
+  </div>
+</header>
+
+</body>
+</html>

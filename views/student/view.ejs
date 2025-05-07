@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Student Status</title>
+<meta charset="UTF-8">
+<meta name="description" content="This is a page containing info">
+<meta http-equiv="refresh" content="3600"> <!-- Refresh every hour -->
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.w3-table-data {
+  margin-left: auto;
+  margin-right: auto;
+  overflow-x: auto;
+}
+.w3-table-data h2 {
+  text-align: center;
+  color: #333;
+  font-weight: normal;
+}
+.w3-table-data table {
+  width: 100%;
+  table-layout: auto;
+  word-wrap: break-word;
+}
+
+.w3-table-data th, .w3-table-data td {
+  word-break: normal;
+}
+.w3-table-data th {
+  background-color: #2196f3;
+  color: white;
+}
+.w3-table-data tr:nth-child(even) {
+  background-color: #cccccc;
+}
+.w3-return {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+.w3-return p {
+  text-align: center;
+  color: #333;
+  font-weight: normal;
+}
+.w3-return a {
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin: 10px 0;
+  background-color: #2196f3;
+  color: white;
+  text-align: center;
+  line-height: 40px;
+  text-decoration: none;
+}
+.w3-return a:hover {
+  background-color: #177ccb;
+}
+</style>
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-blue w3-card w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-padding-large w3-hover-white w3-large w3-blue" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="/" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a>
+  </div>
+
+  <!-- Navbar on small screens -->
+  <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 1</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 2</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 3</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-large">Link 4</a>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-container w3-blue w3-center" style="padding:128px 16px">
+  <h1 class="w3-margin w3-jumbo">Student Status</h1>
+  <p class="w3-xlarge">This is where you can see your current status</p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-table-data">
+      <h2> <%= title %> </h2>
+      <table>
+        <tr>
+          <th>Student ID</th>
+          <th>Student Email</th>
+          <th>GPA</th>
+          <th>Pathway</th>
+          <th>Total Units</th>
+          <th>Has Advisor</th>
+          <th>Advisor</th>
+          <th>TA/RA</th>
+          <th style="min-width:175px;">TA Year & Term</th>
+          <th>Year</th>
+          <th>Semester</th>
+          <th>Max Term</th>
+          <th>Passed Qualifying Exam</th>
+          <th>Passed Proposal</th>
+          <th>Passed Defense</th>
+          <th>Dissertation Committee</th>
+          <th>Submitted DIG</th>
+          <th>Expected Grad Year</th>
+          <th>Expected Grad Term</th>
+          <th>Graduated</th>
+        </tr>
+        <% if (StudentData.length !== 0) { %>
+          <% StudentData.forEach(function(data, index) { %>
+            <tr>
+              <td><%= data.StudentID %></td>
+              <td><%= data.StudentEmail %></td>
+              <td><%= data.GPA %></td>
+              <td><%= data.Pathway %></td>
+              <td><%= data.TotalUnits %></td>
+              <td><%= data.HasAdvisor %></td>
+              <td><%= data.Advisor %></td>
+              <td><%= data.RA_TA %></td>
+              <td>
+                <% 
+                let combined = [];
+                for(let i = 0; i < data.TA_Year.length; i++) {
+                  combined.push(data.TA_Year[i] + ' ' + data.TA_Term[i]);
+                  if ((i + 1) % 2 === 0 && i !== data.TA_Year.length - 1) {
+                    combined.push('<br>');
+                  } else if (i !== data.TA_Year.length - 1) {
+                    combined.push(', ');
+                  }
+                }
+                %>
+                <%- combined.join('') %>
+              </td>
+              <td><%= data.Year %></td>
+              <td><%= data.Semester %></td>
+              <td><%= data.MaxTerm %></td>
+              <td><%= data.PassedQualifyingExam %></td>
+              <td><%= data.PassedProposal %></td>
+              <td><%= data.PassedDefense %></td>
+              <td><%= data.DissertationComm%></td>
+              <td><%= data.SubmittedDIG%></td>
+              <td><%= data.ExpectedGradYear%></td>
+              <td><%= data.ExpectedGradTerm%></td>
+              <td><%= data.Graduated %></td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="7">No Data Found</td>
+          </tr>
+        <% } %>
+      </table>
+    </div>
+    <div class="w3-return">
+      <p><a href="/">Return to the Home Page</a></p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

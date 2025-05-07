@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf8"> <!-- Chars Expected -->
+    <meta name="description" content="This is a page containing the submission form for progress reports">
+    <meta http-equiv="refresh" content="3600"> <!-- Refresh every hour -->
+    <title>Progress Submission</title>
+</head>
+<body>
+    <h1>Submissions</h1>
+    <p>Submit Your Progress Reports Here, please include your <strong>Student Email</strong>, that is your email ending in <strong>@student.uml.edu</strong>.</p>
+    <p> This is a Work in Progress page and is <strong>unfinished</strong>
+    <form action="/upload/progress" method="post" enctype="multipart/form-data">
+        <label for="file">File</label><br>
+        <input id="file" name="file" type="file" required/><br>
+        <label for="id">Student Email</label><br>
+        <input id="id" name="id" type="text" required/><br>
+        <button>Upload</button>
+    </form>
+</body>
